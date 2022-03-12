@@ -1,4 +1,4 @@
-# redesigned-octo-eureka
+# as-guis
 
 basically some component examples and [7guis](https://eugenkiss.github.io/7guis/) tasks in [Angular](https://angular.io/), [Next](https://nextjs.org/) ([React](https://reactjs.org/)), [Nuxt](https://v3.nuxtjs.org/) ([Vue](https://vuejs.org/)) and [SvelteKit](https://kit.svelte.dev/) ([Svelte](https://svelte.dev/)).
 
