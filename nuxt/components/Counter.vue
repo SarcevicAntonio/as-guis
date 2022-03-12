@@ -7,5 +7,5 @@ function increment() {
 </script>
 <template>
 	<span>{{ count }}</span>
-	<button @click="increment()">Count</button>
+	<button @click="increment">Count</button>
 </template>

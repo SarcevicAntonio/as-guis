@@ -1,5 +1,6 @@
-import Counter from '../lib/Counter';
 import Head from 'next/head';
+import Counter from '../lib/Counter';
+import HelloWorld from '../lib/HelloWorld';
 
 export default function Home() {
 	return (
@@ -9,6 +10,8 @@ export default function Home() {
 			</Head>
 			<main>
 				<h1>Next</h1>
+				<h2>Hello World</h2>
+				<HelloWorld/>
 				<h2>Counter</h2>
 				<Counter />
 			</main>
