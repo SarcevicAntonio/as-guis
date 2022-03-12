@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Counter from '../lib/Counter';
 import HelloWorld from '../lib/HelloWorld';
+import TemperatureConverter from '../lib/TemperatureConverter';
 
 export default function Home() {
 	return (
@@ -11,9 +12,11 @@ export default function Home() {
 			<main>
 				<h1>Next</h1>
 				<h2>Hello World</h2>
-				<HelloWorld/>
+				<HelloWorld />
 				<h2>Counter</h2>
 				<Counter />
+				<h2>Temperature Converter</h2>
+				<TemperatureConverter />
 			</main>
 		</>
 	);

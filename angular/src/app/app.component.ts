@@ -9,6 +9,8 @@ import { Component } from '@angular/core';
 			<app-hello-world></app-hello-world>
 			<h2>Counter</h2>
 			<app-counter></app-counter>
+			<h2>Temperature Converter</h2>
+			<app-temperature-converter></app-temperature-converter>
 		</main>
 	`
 })

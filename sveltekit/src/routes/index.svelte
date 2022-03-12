@@ -1,6 +1,7 @@
 <script>
 	import Counter from '$lib/Counter.svelte';
 	import HelloWorld from '$lib/HelloWorld.svelte';
+	import TemperatureConverter from '$lib/TemperatureConverter.svelte';
 </script>
 
 <main>
@@ -9,4 +10,6 @@
 	<HelloWorld />
 	<h2>Counter</h2>
 	<Counter />
+	<h2>Temperature Converter</h2>
+	<TemperatureConverter />
 </main>

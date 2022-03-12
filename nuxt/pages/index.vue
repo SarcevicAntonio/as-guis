@@ -10,5 +10,8 @@ useMeta({
 		<HelloWorld />
 		<h2>Counter</h2>
 		<Counter />
+		<h2>Temperature Converter</h2>
+		<TemperatureConverter />
 	</main>
 </template>
+3
