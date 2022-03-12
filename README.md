@@ -2,7 +2,17 @@
 
 basically some component examples and [7guis](https://eugenkiss.github.io/7guis/) tasks in [Angular](https://angular.io/), [Next](https://nextjs.org/) ([React](https://reactjs.org/)), [Nuxt](https://v3.nuxtjs.org/) ([Vue](https://vuejs.org/)) and [SvelteKit](https://kit.svelte.dev/) ([Svelte](https://svelte.dev/)).
 
+View live versions for [Angular](https://as-guis-angular.netlify.app/), [Next](https://as-guis-next.vercel.app/), [Nuxt](https://as-guis-nuxt.netlify.app/) and [SvelteKit](https://as-guis-sveltekit.netlify.app/).
+
+View source code for [Angular](/angular), [Next](/next), [Nuxt](/nuxt) and [SvelteKit](/sveltekit).
+
+---
+
+Below I compare component syntax for these technologies.
+
 Character counts done with VSCode with code formatted by Prettier (using tabs) and with as few empty lines as Prettier allows.
+
+Click the name of the technology in the tables to view source of each component.
 
 ## Hello World
 
