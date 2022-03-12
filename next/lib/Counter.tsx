@@ -4,5 +4,10 @@ export default function Counter() {
 	function increment() {
 		setCount(count + 1);
 	}
-	return <button onClick={increment}>Clicks: {count}</button>;
+	return (
+		<>
+			<span>{count}</span>
+			<button onClick={increment}>Count</button>
+		</>
+	);
 }
