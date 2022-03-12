@@ -3,9 +3,7 @@
 </script>
 
 <main>
-	<h1>sveltekit</h1>
-
-	<h2>counter</h2>
-
+	<h1>SvelteKit</h1>
+	<h2>Counter</h2>
 	<Counter />
 </main>
