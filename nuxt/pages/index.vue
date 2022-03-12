@@ -1,10 +1,14 @@
+<script setup>
+useMeta({
+  title: "nuxt",
+});
+</script>
 <template>
-<main>
-	<h1>nuxt</h1>
+  <main>
+    <h1>nuxt</h1>
 
-	<h2>counter</h2>
+    <h2>counter</h2>
 
-	<Counter />
-</main>
-
+    <Counter />
+  </main>
 </template>
