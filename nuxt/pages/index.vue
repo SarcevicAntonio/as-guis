@@ -12,6 +12,8 @@ useMeta({
 		<Counter />
 		<h2>Temperature Converter</h2>
 		<TemperatureConverter />
+		<h2>Flight Booker</h2>
+		<FlightBooker />
 	</main>
 </template>
 3

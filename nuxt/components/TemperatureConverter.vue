@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref } from 'vue';
 const c = ref<number>(undefined);
 const f = ref<number>(undefined);
 function handleCelsius() {

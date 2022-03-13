@@ -1,5 +1,6 @@
 <script>
 	import Counter from '$lib/Counter.svelte';
+	import FlightBooker from '$lib/FlightBooker.svelte';
 	import HelloWorld from '$lib/HelloWorld.svelte';
 	import TemperatureConverter from '$lib/TemperatureConverter.svelte';
 </script>
@@ -12,4 +13,6 @@
 	<Counter />
 	<h2>Temperature Converter</h2>
 	<TemperatureConverter />
+	<h2>Flight Booker</h2>
+	<FlightBooker />
 </main>
