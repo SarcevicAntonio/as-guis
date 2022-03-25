@@ -24,9 +24,7 @@
 <input bind:value={returnDate} class:error={returnInvalid} disabled={type !== 'return'} />
 <br />
 <button
-	disabled={startInvalid ||
-		returnInvalid ||
-		(type === 'return' && new Date(startDate) >= new Date(returnDate))}
+	disabled={startInvalid || returnInvalid || (type === 'return' && startDate >= returnDate)}
 	on:click={handleClick}
 >
 	book

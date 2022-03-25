@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Counter from '../lib/Counter';
+import FlightBooker from '../lib/FlightBooker';
 import HelloWorld from '../lib/HelloWorld';
 import TemperatureConverter from '../lib/TemperatureConverter';
 
@@ -17,6 +18,8 @@ export default function Home() {
 				<Counter />
 				<h2>Temperature Converter</h2>
 				<TemperatureConverter />
+				<h2>Flight Booker</h2>
+				<FlightBooker />
 			</main>
 		</>
 	);

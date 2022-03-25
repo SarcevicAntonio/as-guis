@@ -10,7 +10,8 @@ View source code for [Angular](/angular), [Next](/next), [Nuxt](/nuxt) and [Svel
 
 Below I compare component syntax for these technologies.
 
-Character counts done with VSCode with code formatted using Prettier (with default SvelteKit `.prettierrc`) and with as few empty lines as Prettier allows.
+- Character counts done with VSCode with code formatted using Prettier (with default SvelteKit `.prettierrc`) and with as few empty lines as Prettier allows.
+- Trying to get the tersest valid syntax that doesn't give framework warnings / ts errors (with framework default tsconfig; might need to unify tsconfigs later).
 
 Click the name of the technology in the tables to view source of each component.
 
@@ -68,10 +69,17 @@ Bidirectional data flow.
 
 ## 03 - [Flight Booker](https://eugenkiss.github.io/7guis/tasks/#flight)
 
-|                 | Angular | Next | [Nuxt][03-nuxt] | [SvelteKit][03-sveltekit] |
-| --------------- | ------- | ---- | --------------- | ------------------------- |
-| character count | TODO    | TODO | 1149            | 1009                      |
+|                           | [Angular][03-angular]                                       | [Next][03-next] + [module.css][03-next-styles]        | [Nuxt][03-nuxt]                    | [SvelteKit][03-sveltekit]             |
+| ------------------------- | ----------------------------------------------------------- | ----------------------------------------------------- | ---------------------------------- | ------------------------------------- |
+| character count           | 1965                                                        | 1454                                                  | 1122                               | 985                                   |
+| constraints / reactivity  | subscribing on `FormControl` `valueChanges` + unsubscribing | variables get re-declared every update                | variable + function call           | labeled variable                      |
+| scoped css                | linked / defined inside decorator                           | imports from `.module.css`                            | defined in `<styles scoped>`       | defined `<styles>`                    |
+| conditional class         | `[class.error]="startInvalid"`                              | `className={startInvalid ? styles.error : undefined}` | `:class="{ error: startInvalid }"` | `class:error={startInvalid}`          |
+| class attribute initially | `ng-untouched ng-pristine` _(formControl status)_           | _(correctly missing)_                                 | _(empty)_                          | `s-AlKFmgiKvTi_` _(css scoping hash)_ |
 
+[03-angular]: /angular/src/app/components/flight-booker.component.ts
+[03-next]: /next/lib/FlightBooker.tsx
+[03-next-styles]: /next/lib/FlightBooker.module.css
 [03-nuxt]: /nuxt/components/FlightBooker.vue
 [03-sveltekit]: /sveltekit/src/lib/FlightBooker.svelte
 

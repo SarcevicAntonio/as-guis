@@ -11,6 +11,8 @@ import { Component } from '@angular/core';
 			<app-counter></app-counter>
 			<h2>Temperature Converter</h2>
 			<app-temperature-converter></app-temperature-converter>
+			<h2>Flight Booker</h2>
+			<app-flight-booker></app-flight-booker>
 		</main>
 	`
 })

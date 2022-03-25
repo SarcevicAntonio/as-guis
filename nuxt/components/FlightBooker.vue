@@ -24,18 +24,13 @@ function handleClick() {
 	<input v-model="returnDate" :class="{ error: returnInvalid }" :disabled="type !== 'return'" />
 	<br />
 	<button
-		:disabled="
-			startInvalid ||
-			returnInvalid ||
-			(type === 'return' && new Date(startDate) >= new Date(returnDate))
-		"
+		:disabled="startInvalid || returnInvalid || (type === 'return' && startDate >= returnDate)"
 		@click="handleClick"
 	>
 		book
 	</button>
 </template>
-
-<style>
+<style scoped>
 .error {
 	background-color: red;
 }
