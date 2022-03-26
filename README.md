@@ -26,7 +26,7 @@ This is the most minimal component you can make, which lets us closely inspect h
 | component declared as    | class with `@Component` decorator | function returning JSX | SFC (`.vue`)            | SFC (`.svelte`)           |
 | component imported in    | class with `@NgModule` decorator  | parent component       | _auto-import_           | parent component          |
 | self closing tag allowed | ❌                                | ✅                     | ✅                      | ✅                        |
-| renders wrapper element  | ❌                                | ✅                     | ✅                      | ✅                        |
+| renders w/o wrapper element  | ❌                                | ✅                     | ✅                      | ✅                        |
 | template / markup        | linked / defined inside decorator | JSX, requires fragment | defined in `<template>` | defined at top level      |
 
 [00-angular]: /angular/src/app/components/hello-world.component.ts
