@@ -1,3 +1,5 @@
+<img src="favicon.svg" width="64" height="64" alt="" />
+
 # as-guis (WIP)
 
 Basically some component examples and [7guis](https://eugenkiss.github.io/7guis/) tasks implemented in [Angular](https://angular.io/), [Next](https://nextjs.org/) ([React](https://reactjs.org/)), [Nuxt](https://v3.nuxtjs.org/) ([Vue](https://vuejs.org/)) and [SvelteKit](https://kit.svelte.dev/) ([Svelte](https://svelte.dev/)).
@@ -20,14 +22,14 @@ Click the name of the technology in the tables to view source of each component.
 Task: Show the text "Hello World".
 This is the most minimal component you can make, which lets us closely inspect how the technology deals with components.
 
-|                          | [Angular][00-angular]             | [Next][00-next]        | [Nuxt][00-nuxt]         | [SvelteKit][00-sveltekit] |
-| ------------------------ | --------------------------------- | ---------------------- | ----------------------- | ------------------------- |
-| character count          | 150                               | 57                     | 33                      | 12                        |
-| component declared as    | class with `@Component` decorator | function returning JSX | SFC (`.vue`)            | SFC (`.svelte`)           |
-| component imported in    | class with `@NgModule` decorator  | parent component       | _auto-import_           | parent component          |
-| self closing tag allowed | ❌                                | ✅                     | ✅                      | ✅                        |
-| renders w/o wrapper element  | ❌                                | ✅                     | ✅                      | ✅                        |
-| template / markup        | linked / defined inside decorator | JSX, requires fragment | defined in `<template>` | defined at top level      |
+|                             | [Angular][00-angular]             | [Next][00-next]        | [Nuxt][00-nuxt]         | [SvelteKit][00-sveltekit] |
+| --------------------------- | --------------------------------- | ---------------------- | ----------------------- | ------------------------- |
+| character count             | 150                               | 57                     | 33                      | 12                        |
+| component declared as       | class with `@Component` decorator | function returning JSX | SFC (`.vue`)            | SFC (`.svelte`)           |
+| component imported in       | class with `@NgModule` decorator  | parent component       | _auto-import_           | parent component          |
+| self closing tag allowed    | ❌                                | ✅                     | ✅                      | ✅                        |
+| renders w/o wrapper element | ❌                                | ✅                     | ✅                      | ✅                        |
+| template / markup           | linked / defined inside decorator | JSX, requires fragment | defined in `<template>` | defined at top level      |
 
 [00-angular]: /angular/src/app/components/hello-world.component.ts
 [00-next]: /next/lib/HelloWorld.tsx
