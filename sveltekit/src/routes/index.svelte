@@ -1,5 +1,5 @@
 <script>
-	import '../../../styles.css';
+	import '../styles.css';
 	import Counter from '$lib/Counter.svelte';
 	import FlightBooker from '$lib/FlightBooker.svelte';
 	import HelloWorld from '$lib/HelloWorld.svelte';
