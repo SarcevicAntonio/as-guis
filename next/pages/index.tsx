@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Addition from '../lib/Addition';
 import Counter from '../lib/Counter';
 import FlightBooker from '../lib/FlightBooker';
 import HelloWorld from '../lib/HelloWorld';
@@ -50,6 +51,17 @@ export default function Home() {
 						</div>
 						<div className="content">
 							<Counter />
+						</div>
+					</article>
+					<article>
+						<div className="title">
+							<h2>Addition</h2>
+							<a href="https://github.com/SarcevicAntonio/as-guis/blob/main/next/lib/Addition.tsx">
+								📝
+							</a>
+						</div>
+						<div className="content">
+							<Addition />
 						</div>
 					</article>
 					<article>

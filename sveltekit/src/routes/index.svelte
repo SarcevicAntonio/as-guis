@@ -1,9 +1,10 @@
 <script>
-	import '../styles.css';
+	import Addition from '$lib/Addition.svelte';
 	import Counter from '$lib/Counter.svelte';
 	import FlightBooker from '$lib/FlightBooker.svelte';
 	import HelloWorld from '$lib/HelloWorld.svelte';
 	import TemperatureConverter from '$lib/TemperatureConverter.svelte';
+	import '../styles.css';
 </script>
 
 <main>
@@ -49,6 +50,19 @@
 			</div>
 			<div class="content">
 				<Counter />
+			</div>
+		</article>
+		<article>
+			<div class="title">
+				<h2>Addition</h2>
+				<a
+					href="https://github.com/SarcevicAntonio/as-guis/blob/main/sveltekit/src/lib/Addition.svelte"
+				>
+					📝
+				</a>
+			</div>
+			<div class="content">
+				<Addition />
 			</div>
 		</article>
 		<article>
