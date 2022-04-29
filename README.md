@@ -85,6 +85,20 @@ Bidirectional data flow.
 [03-nuxt]: /nuxt/components/FlightBooker.vue
 [03-sveltekit]: /sveltekit/src/lib/FlightBooker.svelte
 
+## [Addition](https://svelte.dev/blog/write-less-code)
+
+|                 | [Angular][add-angular] | [Next][add-next] | [Nuxt][add-nuxt] | [SvelteKit][add-sveltekit] |
+| --------------- | --------------------- | --------------- | --------------- | ------------------------- |
+| character count |                       | 447             |                 | 150                       |
+
+<!-- [add-angular]: /angular/src/app/components/flight-booker.component.ts -->
+
+[add-next]: /next/lib/Addition.tsx
+
+<!-- [add-nuxt]: /nuxt/components/FlightBooker.vue -->
+
+[add-sveltekit]: /sveltekit/src/lib/Addition.svelte
+
 ---
 
 # Further UI benchmarks
