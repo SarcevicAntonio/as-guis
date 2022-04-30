@@ -1,0 +1,17 @@
+let/c=null
+let/f=null
+const/handleCelsius(e) { const value = e.target.value;
+	c = value;
+	if (isNaN(value)) return;
+	f = value * (9 / 5) + 32; }
+const/handleFahrenheit(e) { const value = e.target.value;
+	f = value;
+	if (isNaN(value)) return;
+	c = (value - 32) * (5 / 9); }
+label
+	input value=c onInput=handleCelsius
+	-- Celsius
+-- =
+label
+	input value=f onInput=handleFahrenheit
+	-- Fahrenheit

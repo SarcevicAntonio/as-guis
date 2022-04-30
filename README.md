@@ -25,7 +25,7 @@ This is the most minimal component you can make, which lets us closely inspect h
 
 |                             | [Angular][00-angular]             | [Next][00-next]        | [Nuxt][00-nuxt]         | [SvelteKit][00-sveltekit] | [Marko][00-marko]                         |
 | --------------------------- | --------------------------------- | ---------------------- | ----------------------- | ------------------------- | ----------------------------------------- |
-| character count             | 150                               | 57                     | 33                      | 12                        | 14 (because of concise mode)              |
+| character count             | 150                               | 57                     | 33                      | 12                        | 15                                        |
 | component declared as       | class with `@Component` decorator | function returning JSX | SFC (`.vue`)            | SFC (`.svelte`)           | SFC (`.marko`)                            |
 | component imported in       | class with `@NgModule` decorator  | parent component       | _auto-import_           | parent component          | _auto-import_                             |
 | self closing tag allowed    | ❌                                | ✅                     | ✅                      | ✅                        | ✅                                        |
@@ -61,16 +61,17 @@ Binding count state in a `<span>` and handling click event from a `<button>`.
 
 Bidirectional data flow.
 
-|                 | [Angular][02-angular] | [Next][02-next]                                                | [Nuxt][02-nuxt] | [SvelteKit][02-sveltekit] |
-| --------------- | --------------------- | -------------------------------------------------------------- | --------------- | ------------------------- |
-| character count | 547                   | 734                                                            | 478             | 387                       |
-| two way binding | `[(ngModel)]="c"`     | none (manually set value on in event listener)                 | `v-model="c"`   | `bind:value={c}`          |
-| notes           |                       | can't have undefined initial value;<br> ts requires unary plus |                 |                           |
+|                 | [Angular][02-angular] | [Next][02-next]                                                | [Nuxt][02-nuxt] | [SvelteKit][02-sveltekit] | [Marko][02-marko]                                          |
+| --------------- | --------------------- | -------------------------------------------------------------- | --------------- | ------------------------- | ---------------------------------------------------------- |
+| character count | 547                   | 725                                                            | 478             | 387                       | 394                                                        |
+| two way binding | `[(ngModel)]="c"`     | none (manually set value on in event listener)                 | `v-model="c"`   | `bind:value={c}`          | none (can't use with event listener)                       |
+| notes           |                       | can't have undefined initial value;<br> ts requires unary plus |                 |                           | two way binding would be `value:=c`;<br> formatting is off |
 
 [02-angular]: /angular/src/app/components/temperature-converter.component.ts
 [02-next]: /next/lib/TemperatureConverter.tsx
 [02-nuxt]: /nuxt/components/TemperatureConverter.vue
 [02-sveltekit]: /sveltekit/src/lib/TemperatureConverter.svelte
+[02-marko]: /marko/src/components/temperature-converter.marko
 
 ## 03 - [Flight Booker](https://eugenkiss.github.io/7guis/tasks/#flight)
 
@@ -90,9 +91,10 @@ Bidirectional data flow.
 
 ## [Addition](https://svelte.dev/blog/write-less-code)
 
-|                 | [Angular][add-angular] | [Next][add-next] | [Nuxt][add-nuxt] | [SvelteKit][add-sveltekit] |
-| --------------- | ---------------------- | ---------------- | ---------------- | -------------------------- |
-| character count |                        | 447              |                  | 150                        |
+|                 | [Angular][add-angular] | [Next][add-next] | [Nuxt][add-nuxt] | [SvelteKit][add-sveltekit] | [Marko (busted)][add-marko]       |
+| --------------- | ---------------------- | ---------------- | ---------------- | -------------------------- | --------------------------------- |
+| character count |                        | 442              |                  | 149                        | 172                               |
+| notes           |                        |                  |                  |                            | two way binding doesn't type cast |
 
 <!-- [add-angular]: /angular/src/app/components/flight-booker.component.ts -->
 
@@ -101,6 +103,7 @@ Bidirectional data flow.
 <!-- [add-nuxt]: /nuxt/components/FlightBooker.vue -->
 
 [add-sveltekit]: /sveltekit/src/lib/Addition.svelte
+[add-marko]: /marko/src/components/addition.marko
 
 ---
 

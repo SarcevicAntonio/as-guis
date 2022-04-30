@@ -54,19 +54,6 @@
 		</article>
 		<article>
 			<div class="title">
-				<h2>Addition</h2>
-				<a
-					href="https://github.com/SarcevicAntonio/as-guis/blob/main/sveltekit/src/lib/Addition.svelte"
-				>
-					📝
-				</a>
-			</div>
-			<div class="content">
-				<Addition />
-			</div>
-		</article>
-		<article>
-			<div class="title">
 				<h2>Temperature Converter</h2>
 				<a
 					href="https://github.com/SarcevicAntonio/as-guis/blob/main/sveltekit/src/lib/TemperatureConverter.svelte"
@@ -89,6 +76,19 @@
 			</div>
 			<div class="content">
 				<FlightBooker />
+			</div>
+		</article>
+		<article>
+			<div class="title">
+				<h2>Addition</h2>
+				<a
+					href="https://github.com/SarcevicAntonio/as-guis/blob/main/sveltekit/src/lib/Addition.svelte"
+				>
+					📝
+				</a>
+			</div>
+			<div class="content">
+				<Addition />
 			</div>
 		</article>
 	</div>

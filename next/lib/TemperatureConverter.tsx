@@ -4,7 +4,7 @@ export default function () {
 	const [f, setF] = useState<number | string>('');
 	function handleCelsius(e: ChangeEvent<HTMLInputElement>) {
 		const value = e.target.value;
-		setC(e.target.value);
+		setC(value);
 		if (isNaN(+value)) return;
 		setF(+value * (9 / 5) + 32);
 	}
