@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Addition from '../lib/Addition';
 import Counter from '../lib/Counter';
 import FlightBooker from '../lib/FlightBooker';
-import HelloWorld from '../lib/HelloWorld';
+import HelloWorld from '../../astro/src/components/HelloWorld/HelloWorld';
 import TemperatureConverter from '../lib/TemperatureConverter';
 
 export default function Home() {

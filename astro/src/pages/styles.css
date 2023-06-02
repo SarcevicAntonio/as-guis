@@ -63,6 +63,7 @@ pre {
   overflow: auto;
   margin-inline: var(--negative-margin);
   margin-bottom: 1rem;
+  tab-size: 3;
 }
 
 pre:last-child {

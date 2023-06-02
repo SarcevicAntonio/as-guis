@@ -1,6 +1,5 @@
 ---
-import TabGroup from "../components/TabGroup.svelte";
-import Tab from "../components/Tab.svelte";
+import { Code } from 'astro/components';
 import HelloWorld from "../components/HelloWorld";
 import "./styles.css";
 
@@ -17,26 +16,27 @@ const guis = {
         Visit project repo
         </a>
     </li>
-    <li>
-      <a href="https://github.com/SarcevicAntonio/as-guis/tree/main/sveltekit/src/lib">
-        Browse component source code.
-      </a>
-    </li>
   </ul>
   
   <section class="articles">
   {
     Object.entries(guis).map(([gui, frameworks]) => (
         <article>
-          <h2>&lt;{gui}/&gt;</h2>
+          <h2>&lt;{gui}/&gt; <a href={`https://github.com/SarcevicAntonio/as-guis/tree/main/src/pages/components/${gui}`}>browse</a></h2>
           {Object.entries(frameworks).map(
-            ([framework, { demo: Demo, code }]) => (
+            ([framework, { demo: Demo, code }]) => {
+              
+              const lang = framework === 'react' ? 
+                  'tsx'
+                   : framework
+              return (
+
               <h3>
-                {gui}.{framework}
+                {gui}.{lang}
                 </h3>
                 <Demo use:client />
-                <pre>{code}</pre>
-            )
+                <Code code={code} lang={lang as any}/>
+            )}
           )}
         </article>
         ))

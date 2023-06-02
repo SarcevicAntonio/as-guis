@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "../astro/src/components/HelloWorld/HelloWorld.tsx"  ],
   "exclude": [
     "node_modules"
   ]
