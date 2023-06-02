@@ -1,81 +1,97 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+	import rawAddition from '../components/lib/Addition.svelte?raw';
+	import Addition from '../components/lib/Addition.svelte';
+	import Counter from '../components/lib/Counter.svelte';
+	import FlightBooker from '../components/lib/FlightBooker.svelte';
+	import HelloWorld from '../components/lib/HelloWorld.svelte';
+	import TemperatureConverter from '../components/lib/TemperatureConverter.svelte';
+	import '../styles.css';
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-	</main>
-</Layout>
+<main>
+	<h1>AS GUIs SvelteKit</h1>
+	<p>
+		This is a live version of an implementation of
+		<a href="https://eugenkiss.github.io/7guis/">7GUIs</a> (+ extra) in
+		<a href="https://kit.svelte.dev/">SvelteKit</a> (<a href="https://svelte.dev/">Svelte</a>).
+	</p>
+	<ul>
+		<li>
+			<a href="https://github.com/SarcevicAntonio/as-guis/">🐙 Visit project repo</a>
+		</li>
+		<li>
+			<a href="https://github.com/SarcevicAntonio/as-guis/tree/main/sveltekit/src/lib">
+				📝 Browse component source code.
+			</a>
+		</li>
+	</ul>
 
-<style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
-</style>
+	<div class="articles">
+		<article>
+			<div class="title">
+				<h2>Hello World</h2>
+				<a
+					href="https://github.com/SarcevicAntonio/as-guis/blob/main/sveltekit/src/lib/HelloWorld.svelte"
+				>
+					📝
+				</a>
+			</div>
+			<div class="content">
+				<HelloWorld />
+			</div>
+		</article>
+		<article>
+			<div class="title">
+				<h2>Counter</h2>
+				<a
+					href="https://github.com/SarcevicAntonio/as-guis/blob/main/sveltekit/src/lib/Counter.svelte"
+				>
+					📝
+				</a>
+			</div>
+			<div class="content">
+				<Counter />
+			</div>
+		</article>
+		<article>
+			<div class="title">
+				<h2>Temperature Converter</h2>
+				<a
+					href="https://github.com/SarcevicAntonio/as-guis/blob/main/sveltekit/src/lib/TemperatureConverter.svelte"
+				>
+					📝
+				</a>
+			</div>
+			<div class="content">
+				<TemperatureConverter />
+			</div>
+		</article>
+		<article>
+			<div class="title">
+				<h2>Flight Booker</h2>
+				<a
+					href="https://github.com/SarcevicAntonio/as-guis/blob/main/sveltekit/src/lib/FlightBooker.svelte"
+				>
+					📝
+				</a>
+			</div>
+			<div class="content">
+				<FlightBooker />
+			</div>
+		</article>
+		<article>
+			<div class="title">
+				<h2>Addition</h2>
+				<a
+					href="https://github.com/SarcevicAntonio/as-guis/blob/main/sveltekit/src/lib/Addition.svelte"
+				>
+					📝
+				</a>
+			</div>
+			<div class="content">
+				<Addition />
+			</div>
+			<pre>{rawAddition}</pre>
+		</article>
+	</div>
+</main>
