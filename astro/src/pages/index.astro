@@ -1,10 +1,12 @@
 ---
 import { Code } from 'astro/components';
 import HelloWorld from "../components/HelloWorld";
+import Addition from "../components/Addition";
 import "./styles.css";
 
 const guis = {
   HelloWorld,
+  Addition
 };
 ---
 
@@ -34,7 +36,8 @@ const guis = {
               <h3>
                 {gui}.{lang}
                 </h3>
-                <Demo use:client />
+                <Demo client:visible />
+
                 <Code code={code} lang={lang as any}/>
             )}
           )}
