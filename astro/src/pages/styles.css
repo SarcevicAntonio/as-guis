@@ -1,0 +1,65 @@
+html {
+  font-family: sans-serif;
+}
+
+main {
+  max-width: 40rem;
+  margin: auto;
+}
+
+article {
+  border: 1px solid rgb(172, 172, 172);
+  border-radius: 6px;
+  overflow: hidden;
+
+  box-shadow: rgb(172 172 172 / 75%) 0px 4px 15px;
+  background: rgb(235, 235, 235);
+
+  --article-padding: 0.5rem;
+  --negative-margin: calc(var(--article-padding) * -1);
+  padding: var(--article-padding);
+}
+
+h2 {
+  font-size: 1.2em;
+  margin: var(--negative-margin) var(--negative-margin) var(--article-padding)
+    var(--negative-margin);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.25em;
+  gap: 0.5em;
+
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  border-top: 1px solid rgb(243, 241, 243);
+  border-bottom: 1px solid rgb(177, 174, 177);
+
+  background: linear-gradient(rgb(235, 235, 235), rgb(213, 213, 213));
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.articles {
+  --gap: 2em;
+  margin-top: var(--gap);
+  display: grid;
+  gap: var(--gap);
+  justify-content: start;
+  justify-items: start;
+}
+
+pre {
+  padding: 0.5em;
+  background-color: black;
+  color: #00ff00;
+  margin-bottom: 0;
+  overflow: auto;
+  margin: var(--negative-margin);
+}

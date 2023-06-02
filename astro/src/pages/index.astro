@@ -1,97 +1,45 @@
 ---
-	import rawAddition from '../components/lib/Addition.svelte?raw';
-	import Addition from '../components/lib/Addition.svelte';
-	import Counter from '../components/lib/Counter.svelte';
-	import FlightBooker from '../components/lib/FlightBooker.svelte';
-	import HelloWorld from '../components/lib/HelloWorld.svelte';
-	import TemperatureConverter from '../components/lib/TemperatureConverter.svelte';
-	import '../styles.css';
+import TabGroup from "../components/TabGroup.svelte";
+import Tab from "../components/Tab.svelte";
+import HelloWorld from "../components/HelloWorld";
+import "./styles.css";
+
+const guis = {
+  HelloWorld,
+};
 ---
 
 <main>
-	<h1>AS GUIs SvelteKit</h1>
-	<p>
-		This is a live version of an implementation of
-		<a href="https://eugenkiss.github.io/7guis/">7GUIs</a> (+ extra) in
-		<a href="https://kit.svelte.dev/">SvelteKit</a> (<a href="https://svelte.dev/">Svelte</a>).
-	</p>
-	<ul>
-		<li>
-			<a href="https://github.com/SarcevicAntonio/as-guis/">🐙 Visit project repo</a>
-		</li>
-		<li>
-			<a href="https://github.com/SarcevicAntonio/as-guis/tree/main/sveltekit/src/lib">
-				📝 Browse component source code.
-			</a>
-		</li>
-	</ul>
-
-	<div class="articles">
-		<article>
-			<div class="title">
-				<h2>Hello World</h2>
-				<a
-					href="https://github.com/SarcevicAntonio/as-guis/blob/main/sveltekit/src/lib/HelloWorld.svelte"
-				>
-					📝
-				</a>
-			</div>
-			<div class="content">
-				<HelloWorld />
-			</div>
-		</article>
-		<article>
-			<div class="title">
-				<h2>Counter</h2>
-				<a
-					href="https://github.com/SarcevicAntonio/as-guis/blob/main/sveltekit/src/lib/Counter.svelte"
-				>
-					📝
-				</a>
-			</div>
-			<div class="content">
-				<Counter />
-			</div>
-		</article>
-		<article>
-			<div class="title">
-				<h2>Temperature Converter</h2>
-				<a
-					href="https://github.com/SarcevicAntonio/as-guis/blob/main/sveltekit/src/lib/TemperatureConverter.svelte"
-				>
-					📝
-				</a>
-			</div>
-			<div class="content">
-				<TemperatureConverter />
-			</div>
-		</article>
-		<article>
-			<div class="title">
-				<h2>Flight Booker</h2>
-				<a
-					href="https://github.com/SarcevicAntonio/as-guis/blob/main/sveltekit/src/lib/FlightBooker.svelte"
-				>
-					📝
-				</a>
-			</div>
-			<div class="content">
-				<FlightBooker />
-			</div>
-		</article>
-		<article>
-			<div class="title">
-				<h2>Addition</h2>
-				<a
-					href="https://github.com/SarcevicAntonio/as-guis/blob/main/sveltekit/src/lib/Addition.svelte"
-				>
-					📝
-				</a>
-			</div>
-			<div class="content">
-				<Addition />
-			</div>
-			<pre>{rawAddition}</pre>
-		</article>
-	</div>
+  <h1>AS GUIs</h1>
+  <ul>
+    <li>
+      <a href="https://github.com/SarcevicAntonio/as-guis/">
+        Visit project repo
+        </a>
+    </li>
+    <li>
+      <a href="https://github.com/SarcevicAntonio/as-guis/tree/main/sveltekit/src/lib">
+        Browse component source code.
+      </a>
+    </li>
+  </ul>
+  
+  <section class="articles">
+  {
+    Object.entries(guis).map(([gui, frameworks]) => (
+        <article>
+            <h2>&lt;{gui}/&gt;</h2>
+          {Object.entries(frameworks).map(
+            ([framework, { demo: Demo, code }]) => (
+                <Demo use:client />
+                <h3>
+                  {gui}.{framework}
+                  </h3>
+                <pre>{code}</pre>
+            )
+          )}
+        </article>
+        ))
+      }
+      </sect>
 </main>
