@@ -28,13 +28,13 @@ const guis = {
   {
     Object.entries(guis).map(([gui, frameworks]) => (
         <article>
-            <h2>&lt;{gui}/&gt;</h2>
+          <h2>&lt;{gui}/&gt;</h2>
           {Object.entries(frameworks).map(
             ([framework, { demo: Demo, code }]) => (
+              <h3>
+                {gui}.{framework}
+                </h3>
                 <Demo use:client />
-                <h3>
-                  {gui}.{framework}
-                  </h3>
                 <pre>{code}</pre>
             )
           )}

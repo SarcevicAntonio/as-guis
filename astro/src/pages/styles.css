@@ -22,8 +22,8 @@ article {
 
 h2 {
   font-size: 1.2em;
-  margin: var(--negative-margin) var(--negative-margin) var(--article-padding)
-    var(--negative-margin);
+  margin: var(--negative-margin);
+  margin-bottom: var(--article-padding);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -61,5 +61,10 @@ pre {
   color: #00ff00;
   margin-bottom: 0;
   overflow: auto;
-  margin: var(--negative-margin);
+  margin-inline: var(--negative-margin);
+  margin-bottom: 1rem;
+}
+
+pre:last-child {
+  margin-bottom: var(--negative-margin);
 }
