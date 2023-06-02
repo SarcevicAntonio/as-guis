@@ -1,126 +1,55 @@
-<img src="favicon.svg" width="64" height="64" alt="" />
+# Astro Starter Kit: Basics
 
-# as-guis (WIP)
+```
+npm create astro@latest -- --template basics
+```
 
-Basically some component examples and [7guis](https://eugenkiss.github.io/7guis/) tasks implemented in [Angular](https://angular.io/), [Next](https://nextjs.org/) ([React](https://reactjs.org/)), [Nuxt](https://v3.nuxtjs.org/) ([Vue](https://vuejs.org/)), [SvelteKit](https://kit.svelte.dev/) ([Svelte](https://svelte.dev/)) and [Marko](https://markojs.com/) (using the [new Tags API](https://dev.to/ryansolid/introducing-the-marko-tags-api-preview-37o4)).
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
+[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
 
-View live versions for [Angular](https://as-guis-angular.netlify.app/), [Next](https://as-guis-next.vercel.app/), [Nuxt](https://as-guis-nuxt.netlify.app/) and [SvelteKit](https://as-guis-sveltekit.netlify.app/).
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-View source code for [Angular](/angular), [Next](/next), [Nuxt](/nuxt) and [SvelteKit](/sveltekit).
+![basics](https://user-images.githubusercontent.com/4677417/186188965-73453154-fdec-4d6b-9c34-cb35c248ae5b.png)
 
----
 
-Below I compare component syntax for these technologies.
+## 🚀 Project Structure
 
-- All except Marko are using TypeScript (which gives Marko an advantage in this comparison when it comes to character count, maybe TypeScript should be stripped for all or have a separate comparison)
-- Character counts done with VSCode with code formatted using Prettier (with default SvelteKit `.prettierrc`) and with as few empty lines as Prettier allows.
-- Trying to get the tersest valid syntax that doesn't give framework warnings / ts errors (with framework default tsconfig; might need to unify tsconfigs later).
+Inside of your Astro project, you'll see the following folders and files:
 
-Click the name of the technology in the tables to view source of each component.
+```
+/
+├── public/
+│   └── favicon.svg
+├── src/
+│   ├── components/
+│   │   └── Card.astro
+│   ├── layouts/
+│   │   └── Layout.astro
+│   └── pages/
+│       └── index.astro
+└── package.json
+```
 
-## 00 - Hello World
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-Task: Show the text "Hello World".
-This is the most minimal component you can make, which lets us closely inspect how the technology deals with components.
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
-|                             | [Angular][00-angular]             | [Next][00-next]        | [Nuxt][00-nuxt]         | [SvelteKit][00-sveltekit] | [Marko][00-marko]                         |
-| --------------------------- | --------------------------------- | ---------------------- | ----------------------- | ------------------------- | ----------------------------------------- |
-| character count             | 150                               | 57                     | 33                      | 12                        | 15                                        |
-| component declared as       | class with `@Component` decorator | function returning JSX | SFC (`.vue`)            | SFC (`.svelte`)           | SFC (`.marko`)                            |
-| component imported in       | class with `@NgModule` decorator  | parent component       | _auto-import_           | parent component          | _auto-import_                             |
-| self closing tag allowed    | ❌                                | ✅                     | ✅                      | ✅                        | ✅                                        |
-| renders w/o wrapper element | ❌                                | ✅                     | ✅                      | ✅                        | ✅                                        |
-| template / markup           | linked / defined inside decorator | JSX, requires fragment | defined in `<template>` | defined at top level      | defined at top level, two modes available |
+Any static assets, like images, can be placed in the `public/` directory.
 
-[00-angular]: /angular/src/app/components/hello-world.component.ts
-[00-next]: /next/lib/HelloWorld.tsx
-[00-nuxt]: /nuxt/components/HelloWorld.vue
-[00-sveltekit]: /sveltekit/src/lib/HelloWorld.svelte
-[00-marko]: /marko/src/components/hello-world.marko
+## 🧞 Commands
 
-## 01 - [Counter](https://eugenkiss.github.io/7guis/tasks#counter)
+All commands are run from the root of the project, from a terminal:
 
-Binding count state in a `<span>` and handling click event from a `<button>`.
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:3000`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-|                       | [Angular][01-angular]      | [Next][01-next]                        | [Nuxt][01-nuxt]                                     | [SvelteKit][01-sveltekit] | [Marko][01-marko]   |
-| --------------------- | -------------------------- | -------------------------------------- | --------------------------------------------------- | ------------------------- | ------------------- |
-| character count       | 266                        | 258                                    | 201                                                 | 160                       | 97                  |
-| declaring state as    | class property             | variable + destructuring function call | variable + function call                            | variable                  | let tag (variable)  |
-| setting state         | mutation of class property | calling function                       | assigning variable property                         | assigning variable        | assigning variable  |
-| binding state to view | double curly braces        | curly braces                           | double curly braces                                 | curly braces              | dollar curly braces |
-| adding event listener | `(click)="increment()"`    | `onClick={increment}`                  | `@click="increment"` or <br> `@click="increment()"` | `on:click={increment}`    | `onClick=increment` |
-| notes                 |                            |                                        | auto-import of Reactivity APIs                      |                           |
+## 👀 Want to learn more?
 
-[01-angular]: /angular/src/app/components/counter.component.ts
-[01-next]: /next/lib/Counter.tsx
-[01-nuxt]: /nuxt/components/Counter.vue
-[01-sveltekit]: /sveltekit/src/lib/Counter.svelte
-[01-marko]: /marko/src/components/counter.marko
-
-## 02 - [Temperature Converter](https://eugenkiss.github.io/7guis/tasks/#temp)
-
-Bidirectional data flow.
-
-|                 | [Angular][02-angular] | [Next][02-next]                                                | [Nuxt][02-nuxt] | [SvelteKit][02-sveltekit] | [Marko][02-marko]                                          |
-| --------------- | --------------------- | -------------------------------------------------------------- | --------------- | ------------------------- | ---------------------------------------------------------- |
-| character count | 547                   | 725                                                            | 478             | 387                       | 394                                                        |
-| two way binding | `[(ngModel)]="c"`     | none (manually set value on in event listener)                 | `v-model="c"`   | `bind:value={c}`          | none (can't use with event listener)                       |
-| notes           |                       | can't have undefined initial value;<br> ts requires unary plus |                 |                           | two way binding would be `value:=c`;<br> formatting is off |
-
-[02-angular]: /angular/src/app/components/temperature-converter.component.ts
-[02-next]: /next/lib/TemperatureConverter.tsx
-[02-nuxt]: /nuxt/components/TemperatureConverter.vue
-[02-sveltekit]: /sveltekit/src/lib/TemperatureConverter.svelte
-[02-marko]: /marko/src/components/temperature-converter.marko
-
-## 03 - [Flight Booker](https://eugenkiss.github.io/7guis/tasks/#flight)
-
-|                           | [Angular][03-angular]                                       | [Next][03-next] + [module.css][03-next-styles]        | [Nuxt][03-nuxt]                    | [SvelteKit][03-sveltekit]             |
-| ------------------------- | ----------------------------------------------------------- | ----------------------------------------------------- | ---------------------------------- | ------------------------------------- |
-| character count           | 1965                                                        | 1454                                                  | 1122                               | 985                                   |
-| constraints / reactivity  | subscribing on `FormControl` `valueChanges` + unsubscribing | variables get re-declared every update                | variable + function call           | labeled variable                      |
-| scoped css                | linked / defined inside decorator                           | imports from `.module.css`                            | defined in `<styles scoped>`       | defined `<styles>`                    |
-| conditional class         | `[class.error]="startInvalid"`                              | `className={startInvalid ? styles.error : undefined}` | `:class="{ error: startInvalid }"` | `class:error={startInvalid}`          |
-| class attribute initially | `ng-untouched ng-pristine` _(formControl status)_           | _(correctly missing)_                                 | _(empty)_                          | `s-AlKFmgiKvTi_` _(css scoping hash)_ |
-
-[03-angular]: /angular/src/app/components/flight-booker.component.ts
-[03-next]: /next/lib/FlightBooker.tsx
-[03-next-styles]: /next/lib/FlightBooker.module.css
-[03-nuxt]: /nuxt/components/FlightBooker.vue
-[03-sveltekit]: /sveltekit/src/lib/FlightBooker.svelte
-
-## [Addition](https://svelte.dev/blog/write-less-code)
-
-|                 | [Angular][add-angular] | [Next][add-next] | [Nuxt][add-nuxt] | [SvelteKit][add-sveltekit] | [Marko (busted)][add-marko]       |
-| --------------- | ---------------------- | ---------------- | ---------------- | -------------------------- | --------------------------------- |
-| character count |                        | 442              |                  | 149                        | 172                               |
-| notes           |                        |                  |                  |                            | two way binding doesn't type cast |
-
-<!-- [add-angular]: /angular/src/app/components/flight-booker.component.ts -->
-
-[add-next]: /next/lib/Addition.tsx
-
-<!-- [add-nuxt]: /nuxt/components/FlightBooker.vue -->
-
-[add-sveltekit]: /sveltekit/src/lib/Addition.svelte
-[add-marko]: /marko/src/components/addition.marko
-
----
-
-# Further UI benchmarks
-
-Maybe coming in the future:
-
-- custom table component
-- [Timer](https://eugenkiss.github.io/7guis/tasks/#timer)
-- [CRUD](https://eugenkiss.github.io/7guis/tasks/#crud)
-- [Circle Drawer](https://eugenkiss.github.io/7guis/tasks/#circle)
-- [Cells](https://eugenkiss.github.io/7guis/tasks/#cells)
-- [Flux Challenge](https://github.com/staltz/flux-challenge)
-- [ThreaditJS](http://threaditjs.com/)
-
-Benchmarks with existing examples in all technologies (though partly outdated):
-
-- [TodoMVC](https://codebase.show/projects/todomvc)
-- [RealWorld App](https://codebase.show/projects/realworld)
-- [HackerNewsPWA](https://hnpwa.com/)
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
